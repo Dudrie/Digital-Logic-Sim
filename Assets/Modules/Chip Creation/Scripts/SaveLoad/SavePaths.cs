@@ -6,11 +6,11 @@ namespace DLS.ChipCreation
 	public static class SavePaths
 	{
 		const string MajorVersionName = "V1";
-		public static string AllData => "H:";
+		public static string AllData => GenerateAllDataPath();
 
 		// Path to save folder for all projects
-		public static string ProjectsPath => Path.Combine(AllData, "DigitalLogicSim", MajorVersionName, "Projects");
-		public static string DeletedProjectsPath => Path.Combine(AllData, "DigitalLogicSim", MajorVersionName, "Deleted Projects");
+		public static string ProjectsPath => Path.Combine(AllData, MajorVersionName, "Projects");
+		public static string DeletedProjectsPath => Path.Combine(AllData, MajorVersionName, "Deleted Projects");
 
 		// Path to save folder for a specific project
 		public static string ProjectPath(string projectName) => Path.Combine(ProjectsPath, projectName);
@@ -25,6 +25,18 @@ namespace DLS.ChipCreation
 		public static void EnsureDirectoryExists(string directoryPath)
 		{
 			Directory.CreateDirectory(directoryPath);
+		}
+
+		static string GenerateAllDataPath()
+		{
+			if (Directory.Exists(Path.GetFullPath("H:")))
+			{
+				return Path.Combine("H:", "DigitalLogicSim");
+			}
+			else
+			{
+				return Application.persistentDataPath;
+			}
 		}
 	}
 }
