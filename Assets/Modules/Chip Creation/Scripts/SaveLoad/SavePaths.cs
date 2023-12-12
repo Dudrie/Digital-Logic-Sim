@@ -6,11 +6,11 @@ namespace DLS.ChipCreation
 	public static class SavePaths
 	{
 		const string MajorVersionName = "V1";
-		public static string AllData => Application.persistentDataPath;
+		public static string AllData => "H:";
 
 		// Path to save folder for all projects
-		public static string ProjectsPath => Path.Combine(AllData, MajorVersionName, "Projects");
-		public static string DeletedProjectsPath => Path.Combine(AllData, MajorVersionName, "Deleted Projects");
+		public static string ProjectsPath => Path.Combine(AllData, "DigitalSim", MajorVersionName, "Projects");
+		public static string DeletedProjectsPath => Path.Combine(AllData, "DigitalSim", MajorVersionName, "Deleted Projects");
 
 		// Path to save folder for a specific project
 		public static string ProjectPath(string projectName) => Path.Combine(ProjectsPath, projectName);
