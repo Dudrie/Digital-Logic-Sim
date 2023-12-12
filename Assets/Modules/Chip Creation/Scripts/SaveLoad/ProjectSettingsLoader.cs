@@ -114,6 +114,7 @@ namespace DLS.ChipCreation
 		{
 			ProjectSettings settings = new ProjectSettings(projectName);
 			settings.SetStarredState(BuiltinChipNames.AndChip, true, autosave: false);
+			settings.SetStarredState(BuiltinChipNames.OrChip, true, autosave: false);
 			settings.SetStarredState(BuiltinChipNames.NotChip, true, autosave: false);
 
 			DisplayOptions displayOptions = new DisplayOptions()

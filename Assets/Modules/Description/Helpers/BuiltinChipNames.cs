@@ -7,6 +7,7 @@ namespace DLS.ChipData
 	public static class BuiltinChipNames
 	{
 		public const string AndChip = "AND";
+		public const string OrChip = "OR";
 		public const string NotChip = "NOT";
 		public const string TriStateBufferName = "TRI-STATE BUFFER";
 		public const string SevenSegmentDisplayName = "7-SEGMENT DISPLAY";
@@ -16,6 +17,7 @@ namespace DLS.ChipData
 		static readonly string[] allNames = new string[]
 		{
 			AndChip,
+			OrChip,
 			NotChip,
 			TriStateBufferName,
 			SevenSegmentDisplayName,

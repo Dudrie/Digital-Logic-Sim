@@ -13,6 +13,7 @@ namespace DLS.Simulation
 			switch (name)
 			{
 				case BuiltinChipNames.AndChip: return new BuiltinAND(inputPins, outputPins);
+				case BuiltinChipNames.OrChip: return new BuiltinOR(inputPins, outputPins);
 				case BuiltinChipNames.NotChip: return new BuiltinNOT(inputPins, outputPins);
 				case BuiltinChipNames.TriStateBufferName: return new BuiltinTriStateBuffer(inputPins, outputPins);
 				case BuiltinChipNames.SevenSegmentDisplayName: return new BuiltingSevenSegmentDisplay(inputPins, outputPins);

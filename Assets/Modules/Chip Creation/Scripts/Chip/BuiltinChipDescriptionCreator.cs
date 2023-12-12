@@ -14,18 +14,28 @@ namespace DLS.ChipCreation
 			return new ChipDescription[]
 			{
 				CreateBuiltinAND(),
+				CreateBuiltinOR(),
 				CreateBuiltinNOT(),
 				CreateClockDescription(),
 				CreateBuiltinTriStateBuffer(),
 				CreateBuiltinSevenSegmentDisplay(),
 				CreateBusDescription()
-				
+
 			};
 		}
 
 		static ChipDescription CreateBuiltinAND()
 		{
 			string name = BuiltinChipNames.AndChip;
+			string[] inputNames = new string[] { "In A", "In B" };
+			string[] outputNames = new string[] { "Out" };
+			Color col = new Color(0.15f, 0.48f, 0.70f);
+			return EmptyChipDescriptionCreator.CreateEmptyChipDescription(name, inputNames, outputNames, col);
+		}
+
+		static ChipDescription CreateBuiltinOR()
+		{
+			string name = BuiltinChipNames.OrChip;
 			string[] inputNames = new string[] { "In A", "In B" };
 			string[] outputNames = new string[] { "Out" };
 			Color col = new Color(0.15f, 0.48f, 0.70f);
