@@ -9,8 +9,8 @@ namespace DLS.ChipCreation
 		public static string AllData => "H:";
 
 		// Path to save folder for all projects
-		public static string ProjectsPath => Path.Combine(AllData, "DigitalSim", MajorVersionName, "Projects");
-		public static string DeletedProjectsPath => Path.Combine(AllData, "DigitalSim", MajorVersionName, "Deleted Projects");
+		public static string ProjectsPath => Path.Combine(AllData, "DigitalLogicSim", MajorVersionName, "Projects");
+		public static string DeletedProjectsPath => Path.Combine(AllData, "DigitalLogicSim", MajorVersionName, "Deleted Projects");
 
 		// Path to save folder for a specific project
 		public static string ProjectPath(string projectName) => Path.Combine(ProjectsPath, projectName);
