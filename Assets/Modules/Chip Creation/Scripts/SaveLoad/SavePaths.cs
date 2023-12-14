@@ -31,7 +31,7 @@ namespace DLS.ChipCreation
 		{
 			if (Directory.Exists(Path.GetFullPath("H:")))
 			{
-				return Path.Combine("H:", "DigitalLogicSim");
+				return Path.Combine("H:", "DigitalLogicSimProjects");
 			}
 			else
 			{
