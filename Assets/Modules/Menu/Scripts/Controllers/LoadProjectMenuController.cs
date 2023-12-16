@@ -15,6 +15,8 @@ namespace DLS.MainMenu
 		[SerializeField] CustomButton renameButton;
 		[SerializeField] CustomButton deleteButton;
 		[SerializeField] CustomButton copyButton;
+		[SerializeField] CustomButton folderButton;
+		[SerializeField] CustomButton refreshButton;
 		[SerializeField] CustomButton openButton;
 		[SerializeField] RectTransform projectListHolder;
 		[SerializeField] CustomButton projectNamePrefab;
@@ -45,6 +47,8 @@ namespace DLS.MainMenu
 			cancelDelete.ButtonClicked += () => deleteConfirmMenu.SetActive(false);
 			renameButton.ButtonClicked += () => OpenRenamePopup(false);
 			copyButton.ButtonClicked += () => OpenRenamePopup(true);
+			folderButton.ButtonClicked += OpenProjectFolderInExplorer;
+			refreshButton.ButtonClicked += RefreshProjectList;
 			cancelRenameButton.ButtonClicked += () => renamePopupMenu.SetActive(false);
 			confirmRenameButton.ButtonClicked += ConfirmRename;
 		}
@@ -90,6 +94,21 @@ namespace DLS.MainMenu
 		{
 			ProjectManager.SetStartupProject(selectedProjectName);
 			mainMenu.Play();
+		}
+
+		void OpenProjectFolderInExplorer()
+		{
+			string winPath = SavePaths.ProjectsPath.Replace("/", "\\");
+
+			try
+			{
+				System.Diagnostics.Process.Start("explorer.exe", "/seelect," + winPath);
+			}
+			catch (System.ComponentModel.Win32Exception e)
+			{
+				// Fail silently
+				e.HelpLink = ""; // Do anything with this variable to silence warning about not using it
+			}
 		}
 
 		void ResetMenu()
