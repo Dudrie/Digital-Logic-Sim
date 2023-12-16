@@ -7,6 +7,7 @@ namespace DLS.ChipCreation.UI
 	public class BuiltinChipCodeView : MonoBehaviour
 	{
 		[SerializeField] TextAsset codeFile_And;
+		[SerializeField] TextAsset codeFile_Or;
 		[SerializeField] TextAsset codeFile_Not;
 		[SerializeField] TextAsset codeFile_Clock;
 		[SerializeField] TextAsset codeFile_TristateBuffer;
@@ -42,6 +43,7 @@ namespace DLS.ChipCreation.UI
 				switch (chipName)
 				{
 					case BuiltinChipNames.AndChip: return codeFile_And;
+					case BuiltinChipNames.OrChip: return codeFile_Or;
 					case BuiltinChipNames.NotChip: return codeFile_Not;
 					case BuiltinChipNames.ClockName: return codeFile_Clock;
 					case BuiltinChipNames.SevenSegmentDisplayName: return codeFile_SevenSegDisplay;

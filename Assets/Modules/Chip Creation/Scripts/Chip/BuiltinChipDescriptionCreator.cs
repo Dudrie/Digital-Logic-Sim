@@ -38,7 +38,7 @@ namespace DLS.ChipCreation
 			string name = BuiltinChipNames.OrChip;
 			string[] inputNames = new string[] { "In A", "In B" };
 			string[] outputNames = new string[] { "Out" };
-			Color col = new Color(0.15f, 0.48f, 0.70f);
+			Color col = new Color(0.92f, 0.44f, 0.01f);
 			return EmptyChipDescriptionCreator.CreateEmptyChipDescription(name, inputNames, outputNames, col);
 		}
 
